@@ -61,24 +61,6 @@
             box-shadow: none;
             border-color: #bc7e59;
         }
-
-        /* Image loading optimization */
-        img {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-        
-        /* Lazy loading placeholder */
-        .img-placeholder {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
     </style>
 </head>
 
@@ -167,36 +149,16 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 <!-- Wedding (12 images) -->
                 <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer" data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg bg-gray-200">
-                        <img src="Wedding/wedding1.JPG" alt="Wedding" 
-                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                             loading="lazy" 
-                             decoding="async">
-                    </div>
+                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding1.JPG" alt="Wedding" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"></div>
                 </div>
                 <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer" data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg bg-gray-200">
-                        <img src="Wedding/wedding2.JPG" alt="Wedding" 
-                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                             loading="lazy" 
-                             decoding="async">
-                    </div>
+                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding2.JPG" alt="Wedding" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"></div>
                 </div>
                 <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer" data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg bg-gray-200">
-                        <img src="Wedding/wedding3.JPG" alt="Wedding" 
-                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                             loading="lazy" 
-                             decoding="async">
-                    </div>
+                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding3.JPG" alt="Wedding" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"></div>
                 </div>
                 <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer" data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg bg-gray-200">
-                        <img src="Wedding/wedding4.JPG" alt="Wedding" 
-                             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                             loading="lazy" 
-                             decoding="async">
-                    </div>
+                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding4.JPG" alt="Wedding" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"></div>
                 </div>
                 <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer" data-category="wedding">
                     <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding5.JPG" alt="Wedding" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"></div>
@@ -613,44 +575,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
     <script src="script.js"></script>
-    
-    <!-- Image Optimization Script -->
-    <script>
-        // Preload critical images
-        const criticalImages = [
-            'Wedding/wedding1.JPG',
-            'Wedding/wedding2.JPG',
-            'Wedding/wedding3.JPG',
-            'Wedding/wedding4.JPG'
-        ];
-        
-        criticalImages.forEach(src => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
-        });
-        
-        // Image loading optimization
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                // Add loading placeholder
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.3s ease';
-                
-                img.addEventListener('load', function() {
-                    this.style.opacity = '1';
-                });
-                
-                img.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    console.log('Failed to load image:', this.src);
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
