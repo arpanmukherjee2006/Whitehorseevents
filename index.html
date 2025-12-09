@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Horse Events - Welcome</title>
+    <link rel="shortcut icon" href="whitehorse logo.png" type="image/x-icon">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#f5f1eb',
+                        peach: {
+                            DEFAULT: 'rgb(254, 228, 212)',
+                            light: 'rgb(254, 240, 224)',
+                        },
+                        brown: {
+                            DEFAULT: '#b5a08a',
+                            light: '#c4b49d',
+                            dark: '#9d8b73',
+                            muted: '#a89684',
+                        }
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 3s ease-in-out',
+                        'slide-up': 'slideUp 2s ease-out',
+                        'pulse-slow': 'pulse 4s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'scale-in': 'scaleIn 1.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        slideUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(60px) scale(0.9)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0) scale(1)'
+                            }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(1deg)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)' },
+                            '100%': { boxShadow: '0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(181, 160, 138, 0.2)' }
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="overflow-hidden bg-black font-inter">
+    <!-- Background Video -->
+    <video class="js-video fixed inset-0 w-screen h-screen object-cover object-center -z-10" autoplay muted loop playsinline
+        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23f5f1eb'/%3E%3C/svg%3E">
+        <source src="landingpagevideo.mp4" type="video/mp4">
+        <!-- Fallback for browsers that don't support video -->
+    </video>
+
+    <!-- Video Overlay -->
+    <div class="fixed inset-0 z-10 backdrop-blur-[2px] saturate-[1.2] bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.3)_0%,rgba(0,0,0,0.8)_100%),linear-gradient(135deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.6)_25%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.6)_75%,rgba(0,0,0,0.8)_100%)]"></div>
+
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center"
+        style="background-color: #fee5d5;">
+        <div class="text-center animate-fade-in">
+            <div class="mx-auto mb-6 h-10 w-10 rounded-full border-[3px] border-white/20 border-t-white/80 border-r-[rgba(181,160,138,0.6)] animate-spin shadow-[0_0_20px_rgba(255,255,255,0.1)]"></div>
+            <p class="text-black font-inter text-sm tracking-wider animate-pulse">Loading Experience...</p>
+            <div
+                class="mt-4 w-32 h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent mx-auto animate-pulse">
+                        </div>
+                    </div>
+                </div>
+
+    <!-- Main Content -->
+    <div class="relative z-20 min-h-screen flex items-center justify-center p-4">
+        <div class="text-center max-w-lg w-full animate-fade-in">
+            <!-- Logo Container -->
+            <div
+                class="rounded-full p-4 sm:p-6 mb-6 sm:mb-8 mx-auto w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 flex items-center justify-center animate-float relative z-10 bg-[#fee3d5] shadow-[0_8px_32px_rgba(0,0,0,0.2),0_0_60px_rgba(5,24,73,0.35)] overflow-hidden">
+                <img src="whitehorse logo.png" alt="White Horse Events Logo"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 object-contain transition-transform duration-300 hover:scale-110"
+                    loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <!-- Fallback SVG if image doesn't load -->
+                <svg style="display: none;"
+                    class="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 text-black transition-transform duration-300 hover:scale-110"
+                    fill="currentColor" viewBox="0 0 100 100">
+                    <g>
+                        <path
+                            d="M30 20 Q35 15 45 18 Q55 20 60 25 Q65 30 68 40 Q70 50 65 60 L60 65 Q55 70 50 72 L45 75 Q40 78 35 75 L30 70 Q25 65 22 55 Q20 45 25 35 Q28 25 30 20 Z" />
+                        <path d="M25 25 Q20 20 15 25 Q18 30 22 35 Q25 40 28 45" stroke="currentColor" stroke-width="2"
+                            fill="none" />
+                        <circle cx="45" cy="35" r="3" />
+                        <circle cx="46" cy="34" r="1" fill="white" />
+                    </g>
+                            </svg>
+                        </div>
+
+            <!-- Welcome Text -->
+            <div class="mb-6 sm:mb-8 animate-slide-up" style="animation-delay: 0.5s;">
+                <h1
+                    class="text-white font-playfair text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-2 sm:mb-3 tracking-wide drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]">
+                    Welcome to
+                </h1>
+                <h2
+                    class="text-white font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-wider mb-3 drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]">
+                    White Horse Events
+            </h2>
+                <p
+                    class="text-white font-inter text-xs sm:text-sm md:text-base max-w-sm mx-auto leading-relaxed whitespace-nowrap">
+                    Creating unforgettable moments for your special day</p>
+            </div>
+
+            <!-- Enter Button -->
+            <div>
+                <button onclick="enterSite()"
+                    class="relative z-10 px-8 sm:px-12 py-3 sm:py-4 rounded-full text-brown font-inter font-medium text-sm sm:text-base md:text-lg tracking-wider uppercase group bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85))] backdrop-blur-2xl border-2 border-[rgba(181,160,138,0.5)] shadow-[0_4px_20px_rgba(0,0,0,0.15),0_0_0_1px_rgba(255,255,255,0.2)_inset] transition duration-400 hover:-translate-y-1 hover:scale-[1.02] hover:border-brown">
+                    <span class="flex items-center justify-center relative z-10">
+                        <span>ENTER</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+
+
+                    </div>
+                </div>
+
+
+
+    <script>
+        // Hide loading screen when page is loaded
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 0.5s ease-out';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Preload the main page
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = 'landingpage.html';
+        document.head.appendChild(link);
+
+        // Enter site function
+        function enterSite() {
+            // Add fade out animation
+            document.body.style.transition = 'opacity 0.8s ease-out';
+            document.body.style.opacity = '0';
+
+            // Navigate to main site after animation
+            setTimeout(() => {
+                window.location.href = 'landingpage.html';
+            }, 800);
+        }
+
+        // Auto-enter after 15 seconds (optional)
+        setTimeout(() => {
+            const enterBtn = document.querySelector('.enter-btn');
+            if (enterBtn) {
+                enterBtn.classList.add('animate-bounce');
+            }
+        }, 12000);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                enterSite();
+            }
+            if (e.key === 'Escape') {
+                enterSite();
+            }
+        });
+
+        // Touch/click anywhere to enter (mobile friendly)
+        let hasInteracted = false;
+        document.addEventListener('click', function (e) {
+            if (!hasInteracted && !e.target.closest('button')) {
+                hasInteracted = true;
+                setTimeout(enterSite, 300);
+            }
+        });
+
+        // Video handling
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.querySelector('.video-background');
+
+            if (video) {
+                // Handle video loading
+                video.addEventListener('loadeddata', function () {
+                    console.log('Video loaded successfully');
+                });
+
+                // Handle video errors
+                video.addEventListener('error', function (e) {
+                    console.log('Video failed to load, using fallback background');
+                    document.body.style.background = 'linear-gradient(135deg, #f5f1eb 0%, rgb(254, 228, 212) 100%)';
+                    video.style.display = 'none';
+                });
+
+                // Ensure video plays
+                video.play().catch(function (error) {
+                    console.log('Video autoplay failed:', error);
+                });
+            }
+        });
+
+        // Performance optimization
+        window.addEventListener('beforeunload', function () {
+            const video = document.querySelector('.video-background');
+            if (video) {
+                video.pause();
+                video.src = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
