@@ -32,6 +32,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
+    <!-- Performance Resource Hints -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="Wedding/wedding1.webp">
+    <link rel="preload" as="image" href="Wedding/wedding2.webp">
+    <link rel="preload" as="image" href="whitehorse logo.png">
+
     <!-- Fallback color utilities to mirror Tailwind config -->
     <style>
         /* Primary font override */
@@ -88,6 +100,41 @@
             outline: none;
             box-shadow: none;
             border-color: #bc7e59;
+        }
+
+        /* Performance optimizations */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            will-change: transform;
+        }
+
+        /* Lazy loading placeholder */
+        .img-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading-shimmer 1.5s infinite;
+            min-height: 200px;
+        }
+
+        @keyframes loading-shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Fade in animation for loaded images */
+        .img-loaded {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .img-loading img {
+            opacity: 0;
         }
     </style>
 </head>
@@ -176,351 +223,351 @@
             </div>
 
             <!-- Portfolio Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                <!-- Wedding (12 images) -->
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding1.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding2.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding3.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding4.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding5.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding6.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding7.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding8.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding9.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding10.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding11.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
-                    data-category="wedding">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding12.webp"
-                            alt="Wedding"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-
-                <!-- Government (12 images) -->
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government1.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government2.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government3.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government4.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government5.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government6.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government7.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government8.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government9.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government10.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government11.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
-                    data-category="government">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Government/government12.webp" alt="Government"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-
-                <!-- Destination (12 images) -->
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination1.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination2.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination3.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination4.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination5.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination6.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination7.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination8.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination9.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination10.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination11.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
-                    data-category="destination">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img
-                            src="Destination/destination12.webp" alt="Destination"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-
-                <!-- Corporate (12 images) -->
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate1.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate2.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate3.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate4.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate5.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate6.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate7.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate8.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate9.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate10.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate11.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
-                    data-category="corporate">
-                    <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate12.webp"
-                            alt="Corporate"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                    </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4" id="portfolio-grid"></div>
+            <!-- Wedding (12 images) -->
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding1.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 </div>
             </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding2.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding3.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding4.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding5.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding6.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding7.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding8.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding9.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding10.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding11.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] wedding group cursor-pointer"
+                data-category="wedding">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Wedding/wedding12.webp"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Government (12 images) -->
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government1.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government2.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government3.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government4.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government5.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government6.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government7.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government8.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government9.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government10.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government11.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] government group cursor-pointer"
+                data-category="government">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Government/government12.webp"
+                        alt="Government"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Destination (12 images) -->
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination1.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination2.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination3.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination4.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination5.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination6.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination7.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination8.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination9.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination10.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination11.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] destination group cursor-pointer"
+                data-category="destination">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Destination/destination12.webp"
+                        alt="Destination"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Corporate (12 images) -->
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate1.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate2.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate3.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate4.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate5.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate6.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate7.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate8.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate9.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate10.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate11.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="portfolio-item transition-transform duration-300 hover:scale-[1.02] corporate group cursor-pointer"
+                data-category="corporate">
+                <div class="relative overflow-hidden aspect-square rounded-lg"><img src="Corporate/corporate12.webp"
+                        alt="Corporate"
+                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -1009,6 +1056,94 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- Advanced Image Performance Optimization -->
+    <script>
+        // Intersection Observer for advanced lazy loading
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const container = img.closest('.portfolio-item');
+
+                    // Add loading shimmer
+                    if (container) container.classList.add('img-loading');
+
+                    // Create new image for preloading
+                    const newImg = new Image();
+                    newImg.onload = () => {
+                        // Image loaded successfully
+                        img.src = newImg.src;
+                        if (container) {
+                            container.classList.remove('img-loading');
+                            container.classList.add('img-loaded');
+                        }
+                        img.style.opacity = '1';
+                    };
+
+                    newImg.onerror = () => {
+                        // Handle error gracefully
+                        if (container) container.classList.remove('img-loading');
+                        img.style.display = 'none';
+                    };
+
+                    // Start loading
+                    newImg.src = img.dataset.src || img.src;
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '100px 0px', // Start loading 100px before image comes into view
+            threshold: 0.1
+        });
+
+        // Preload critical images (first 4 visible images)
+        function preloadCriticalImages() {
+            const criticalImages = [
+                'Wedding/wedding1.webp',
+                'Wedding/wedding2.webp',
+                'Wedding/wedding3.webp',
+                'Wedding/wedding4.webp'
+            ];
+
+            criticalImages.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                document.head.appendChild(link);
+            });
+        }
+
+        // Image optimization
+        function optimizeImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // Add loading="lazy" for non-critical images
+                if (!img.hasAttribute('loading') && !img.closest('.logo')) {
+                    img.loading = 'lazy';
+                }
+
+                // Add decoding="async" for better performance
+                img.decoding = 'async';
+
+                // Observe for lazy loading
+                imageObserver.observe(img);
+            });
+        }
+
+        // Initialize all optimizations
+        document.addEventListener('DOMContentLoaded', function () {
+            preloadCriticalImages();
+            optimizeImages();
+
+            // Prefetch resources
+            const prefetchLink = document.createElement('link');
+            prefetchLink.rel = 'prefetch';
+            prefetchLink.href = 'index.html';
+            document.head.appendChild(prefetchLink);
+        });
+    </script>
 </body>
 
 </html>
